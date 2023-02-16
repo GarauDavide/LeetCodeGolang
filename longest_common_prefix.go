@@ -5,8 +5,8 @@ import "fmt"
 func main() {
 
 	strs := []string{"ciaio", "ciaione", "ciain", "ciaios"}
-
-	fmt.Println(longestCommonPrefix(strs))
+	output := longestCommonPrefix(strs)
+	fmt.Println(output)
 }
 
 func longestCommonPrefix(strs []string) string {
@@ -17,12 +17,16 @@ func longestCommonPrefix(strs []string) string {
 	z_ext := 0
 
 	if len(strs) > 0 {
+
 		col_len = first_string_len
 	}
 
 	for i := 1; i < len(strs); i++ {
+
 		ln := len(strs[i])
+
 		if ln < col_len {
+
 			col_len = ln
 		}
 	}
@@ -34,6 +38,7 @@ func longestCommonPrefix(strs []string) string {
 		for i := 1; i < row_len; i++ {
 
 			if strs[i][z_ext] != ch {
+
 				return strs[0][:z_ext]
 			}
 		}
